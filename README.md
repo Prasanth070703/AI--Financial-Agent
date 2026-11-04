@@ -1,56 +1,85 @@
-# Financial-agent-with-phidata
+# Financial Agent with Phidata
 
-This project is a multi-agent system designed to provide financial analysis and web search capabilities using the `phidata` library. The system consists of two primary agents: a **Web Search Agent** and a **Financial Agent**, which work together to provide comprehensive financial insights and market news.
+This project is a multi-agent AI system that helps users understand the stock market by combining financial data with the latest information available on the web.
 
-## Features
+I built this project to explore how AI agents can simplify financial research. Instead of manually checking stock prices, company fundamentals, analyst opinions, and market news across different platforms, the system brings everything together in one place.
 
-- **Web Search Agent**: Searches the web for relevant information using DuckDuckGo.
-- **Financial Agent**: Retrieves financial data such as stock prices, analyst recommendations, stock fundamentals, and company news using `yfinance`.
-- **Multi-Agent System**: Combines the capabilities of both agents to provide a comprehensive analysis of financial data and market news.
+## How It Works
 
-## Installation
+The project uses two AI agents that work together:
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/financial-agent-with-phidata.git
-   cd financial-agent-with-phidata
-   ```
+- **Web Search Agent:** Searches the web using DuckDuckGo to find relevant market news and information.
+- **Financial Agent:** Uses Yahoo Finance (`yfinance`) to retrieve stock prices, company fundamentals, analyst recommendations, and financial news.
 
-2. **Set up a virtual environment** (optional but recommended):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
+Together, these agents provide a more complete picture of a company and its market performance.
 
-3. **Install the required dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Key Features
 
-4. **Set up environment variables**:
-   - Create a `.env` file in the root directory of the project.
-   - Add your OpenAI API key to the `.env` file:
-     ```plaintext
-     OPENAI_API_KEY=your_openai_api_key_here
-     ```
+- **Stock Analysis:** Get financial information and key fundamentals for a company.
+- **Analyst Recommendations:** Understand what market analysts think about a particular stock.
+- **Latest Market News:** Find recent news and updates related to companies.
+- **Multi-Agent Collaboration:** Combines web research and financial data to generate useful insights.
 
-### Example Output
+## Getting Started
 
-The multi-agent system will provide a detailed analysis, including:
+### 1. Clone the repository
 
-- **Analyst Recommendations**: A summary of analyst recommendations for the specified stock.
-- **Latest News**: The latest news articles related to the stock, sourced from the web.
-- **Financial Data**: Key financial metrics and fundamentals presented in tables.
+```bash
+git clone https://github.com/yourusername/financial-agent-with-phidata.git
+cd financial-agent-with-phidata
+```
 
-## Dependencies
+### 2. Create a virtual environment
 
-The project relies on the following Python packages:
+```bash
+python -m venv venv
+```
 
-- `phidata`: For creating and managing agents.
-- `python-dotenv`: For loading environment variables.
-- `yfinance`: For retrieving financial data.
-- `packaging`: For version management.
-- `duckduckgo-search`: For web search capabilities.
-- `fastapi`: For building APIs (optional, if you plan to expose the agent as a service).
-- `uvicorn`: For running the FastAPI server (optional).
+Activate it:
 
+```bash
+# Windows
+venv\Scripts\activate
+
+# macOS/Linux
+source venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure API credentials
+
+Create a `.env` file in the project directory and add your API key:
+
+```env
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+### 5. Run the project
+
+Run the main Python file:
+
+```bash
+python main.py
+```
+
+## Technologies Used
+
+- Python
+- Phidata
+- OpenAI API
+- Yahoo Finance (`yfinance`)
+- DuckDuckGo Search
+- Python Dotenv
+- FastAPI (optional)
+- Uvicorn (optional)
+
+## What I Learned
+
+Working on this project helped me understand how multiple AI agents can collaborate, use external tools, retrieve financial information, and turn that information into meaningful insights.
+
+It also gave me practical exposure to building AI-powered applications in the financial services domain.
